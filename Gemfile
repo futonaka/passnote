@@ -51,3 +51,5 @@ group :test do
 end
 
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
