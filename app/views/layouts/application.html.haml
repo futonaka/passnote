@@ -14,10 +14,14 @@
     %header
       %nav
         .navbar.navbar-default
-          .navbar-collapse.collapse.navbar-responsive-collapse
           .navbar-header
+            %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
             .navbar-brand
               Passnote
+          .navbar-collapse.collapse.navbar-responsive-collapse
             %ul.nav.navbar-nav.navbar-right
               - if user_signed_in?
                 %li.active
