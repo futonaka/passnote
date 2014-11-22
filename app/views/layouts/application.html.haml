@@ -12,22 +12,29 @@
     = csrf_meta_tags
   %body
     %header
-      %h2
-        Passnote
       %nav
-        - if user_signed_in?
-          Logged in as
-          = succeed "." do
-            %strong= current_user.email
-          = link_to 'プロフィール変更', edit_user_registration_path
-          |
-          \#{link_to "ログアウト", destroy_user_session_path, method: :delete}
-        - else
-          = link_to "サインイン", new_user_registration_path
-          |
-          \#{link_to "ログイン", new_user_session_path}
-          |
-          \#{link_to "Facebook でログイン", user_omniauth_authorize_path(:facebook)}
+        .navbar.navbar-default
+          .navbar-collapse.collapse.navbar-responsive-collapse
+          .navbar-header
+            .navbar-brand
+              Passnote
+            %ul.nav.navbar-nav.navbar-right
+              - if user_signed_in?
+                %li.active
+                  Logged in as
+                  = succeed "." do
+                    %strong= current_user.email
+                %li.active
+                  = link_to 'プロフィール変更', edit_user_registration_path
+                %li.active
+                  \#{link_to "ログアウト", destroy_user_session_path, method: :delete}
+              - else
+                %li.active
+                  = link_to "サインイン", new_user_registration_path
+                %li.active
+                  \#{link_to "ログイン", new_user_session_path}
+                %li.active
+                  \#{link_to "Facebook でログイン", user_omniauth_authorize_path(:facebook)}
     - if notice
       %p.alert.alert-success= notice
     - if alert
