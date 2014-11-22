@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get "home", to: "home#index", as: "user_root"
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get 'home/index'
 
   get 'home/show'
