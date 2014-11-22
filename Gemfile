@@ -137,3 +137,7 @@ end
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+# Twitter Bootstrap
+gem 'twitter-bootswatch-rails', '~> 3.2.0'
+gem 'twitter-bootswatch-rails-helpers'
