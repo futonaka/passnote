@@ -34,11 +34,11 @@
                   \#{link_to "ログアウト", destroy_user_session_path, method: :delete}
               - else
                 %li.active
-                  = link_to "サインイン", new_user_registration_path
+                  = link_to "Passnote に登録する", new_user_registration_path
                 %li.active
                   \#{link_to "ログイン", new_user_session_path}
                 %li.active
-                  \#{link_to "Facebook でログイン", user_omniauth_authorize_path(:facebook)}
+                  \#{link_to "Facebook アカウントでログイン", user_omniauth_authorize_path(:facebook)}
     - if notice
       %p.alert.alert-success= notice
     - if alert
