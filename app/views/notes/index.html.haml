@@ -4,7 +4,6 @@
   %tr
     %th Title
     %th Description
-    %th Weather
     %th
     %th
     %th
@@ -13,7 +12,6 @@
     %tr
       %td= note.title
       %td= note.description
-      %td= note.weather
       %td= link_to 'Show', note
       %td= link_to 'Edit', edit_note_path(note)
       %td= link_to 'Destroy', note, :method => :delete, :data => { :confirm => 'Are you sure?' }
