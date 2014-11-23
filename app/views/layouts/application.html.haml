@@ -38,11 +38,13 @@
                   \#{link_to "ログイン", new_user_session_path}
                 %li.active
                   \#{link_to "Facebook アカウントでログイン", user_omniauth_authorize_path(:facebook)}
-    - if notice
-      %p.alert.alert-success= notice
-    - if alert
-      %p.alert.alert-danger= alert
-    = yield
+    %div.container
+      - if notice
+        %p.alert.alert-success= notice
+      - if alert
+        %p.alert.alert-danger= alert
+
+      = yield
 
     /
       Javascripts
