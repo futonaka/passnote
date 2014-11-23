@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120011052) do
+ActiveRecord::Schema.define(version: 20141123071348) do
+
+  create_table "notes", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_has_notes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "note_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_has_notes", ["note_id"], name: "index_user_has_notes_on_note_id", using: :btree
+  add_index "user_has_notes", ["user_id"], name: "index_user_has_notes_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
