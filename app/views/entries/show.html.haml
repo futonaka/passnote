@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Note:
+  = @entry.note_id
+%p
+  %b Integer:
+  = @entry.integer
+%p
+  %b Author:
+  = @entry.author_id
+%p
+  %b Integer:
+  = @entry.integer
+%p
+  %b Weather:
+  = @entry.weather
+%p
+  %b String:
+  = @entry.string
+%p
+  %b Date:
+  = @entry.date
+%p
+  %b String:
+  = @entry.string
+%p
+  %b Body:
+  = @entry.body
+%p
+  %b Text:
+  = @entry.text
+
+= link_to 'Edit', edit_entry_path(@entry)
+\|
+= link_to 'Back', entries_path

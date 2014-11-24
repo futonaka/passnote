@@ -1,0 +1,37 @@
+%h1 Listing entries
+
+%table
+  %tr
+    %th Note
+    %th Integer
+    %th Author
+    %th Integer
+    %th Weather
+    %th String
+    %th Date
+    %th String
+    %th Body
+    %th Text
+    %th
+    %th
+    %th
+
+  - @entries.each do |entry|
+    %tr
+      %td= entry.note_id
+      %td= entry.integer
+      %td= entry.author_id
+      %td= entry.integer
+      %td= entry.weather
+      %td= entry.string
+      %td= entry.date
+      %td= entry.string
+      %td= entry.body
+      %td= entry.text
+      %td= link_to 'Show', entry
+      %td= link_to 'Edit', edit_entry_path(entry)
+      %td= link_to 'Destroy', entry, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Entry', new_entry_path

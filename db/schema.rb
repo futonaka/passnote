@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141123071348) do
+ActiveRecord::Schema.define(version: 20141124123103) do
+
+  create_table "entries", force: true do |t|
+    t.string   "note_id"
+    t.string   "integer"
+    t.string   "author_id"
+    t.string   "weather"
+    t.string   "string"
+    t.string   "date"
+    t.string   "body"
+    t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "notes", force: true do |t|
     t.string   "title"

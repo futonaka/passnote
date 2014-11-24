@@ -1,0 +1,17 @@
+= simple_form_for(@entry) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :note_id
+    = f.input :integer
+    = f.input :author_id
+    = f.input :integer
+    = f.input :weather
+    = f.input :string
+    = f.input :date
+    = f.input :string
+    = f.input :body
+    = f.input :text
+
+  .form-actions
+    = f.button :submit

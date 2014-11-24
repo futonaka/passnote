@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :entries
+
   resources :notes
 
   get "home", to: "home#index", as: "user_root"
