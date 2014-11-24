@@ -16,11 +16,11 @@
     - @entries.each do |entry|
       %tr
         %td= link_to entry.id, entry_path(entry)
-        %td= entry.note_id
-        %td= entry.author_id
+        %td= entry.note.title
+        %td= User.find(entry.author_id).name
         %td= entry.weather
         %td= entry.date
-        %td= entry.body
+        %td= truncate(entry.body, length: 10, omission: "...")
         %td=l entry.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_entry_path(entry), :class => 'btn btn-primary btn-xs'

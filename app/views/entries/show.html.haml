@@ -5,11 +5,11 @@
 %p
   %strong= model_class.human_attribute_name(:note_id) + ':'
   %br
-  = @entry.note_id
+  = @entry.note.title
 %p
   %strong= model_class.human_attribute_name(:author_id) + ':'
   %br
-  = @entry.author_id
+  = User.find(@entry.author_id).name
 %p
   %strong= model_class.human_attribute_name(:weather) + ':'
   %br
