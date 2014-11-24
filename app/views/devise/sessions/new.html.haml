@@ -1,12 +1,19 @@
+= stylesheet_link_tag    'login', media: 'all', 'data-turbolinks-track' => true
 = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js'
-= javascript_include_tag 'note', 'data-turbolinks-track' => true
+= javascript_include_tag 'login', 'data-turbolinks-track' => true
 
-%div
-  %h2 Log in
+%div.front_welcome_text
+  %h1.front_welcome_title
+    Passnote へようこそ
+  %p
+    友達と、大切なパートナーと、<br>仲間と始める交換日記<br>
+    想いが伝わるコミュニケーションがここにある。
+
+%div.login_form
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .form-inputs
       = f.input :email, required: false, autofocus: true
       = f.input :password, required: false
-    .form-actions
+    .form-actions.btn_login
       = f.button :submit, "ログイン", class: 'btn-primary'
   = render "devise/shared/links"
