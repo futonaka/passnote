@@ -42,6 +42,6 @@ class EntriesController < ApplicationController
     end
 
     def entry_params
-      params.require(:entry).permit(:note_id, :integer, :author_id, :integer, :weather, :string, :date, :string, :body, :text)
+      params.require(:entry).permit(:note_id, :author_id, :weather, :date, :body)
     end
 end

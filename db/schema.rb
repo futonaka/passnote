@@ -11,17 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124123103) do
+ActiveRecord::Schema.define(version: 20141124125237) do
 
   create_table "entries", force: true do |t|
-    t.string   "note_id"
-    t.string   "integer"
-    t.string   "author_id"
+    t.integer  "note_id"
+    t.integer  "author_id"
     t.string   "weather"
-    t.string   "string"
     t.string   "date"
-    t.string   "body"
-    t.string   "text"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,17 +1,9 @@
-= simple_form_for(@entry) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :note_id
-    = f.input :integer
-    = f.input :author_id
-    = f.input :integer
-    = f.input :weather
-    = f.input :string
-    = f.input :date
-    = f.input :string
-    = f.input :body
-    = f.input :text
-
+= simple_form_for @entry, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :note_id
+  = f.input :author_id
+  = f.input :weather
+  = f.input :date
+  = f.input :body
   .form-actions
-    = f.button :submit
+    = f.button :submit, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), entries_path, :class => 'btn'

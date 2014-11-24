@@ -1,15 +1,10 @@
 FactoryGirl.define do
   factory :entry do
-    note_id "MyString"
-integer "MyString"
-author_id "MyString"
-integer "MyString"
+    note_id 1
+author_id 1
 weather "MyString"
-string "MyString"
 date "MyString"
-string "MyString"
-body "MyString"
-text "MyString"
+body "MyText"
   end
 
 end
