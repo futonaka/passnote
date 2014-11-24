@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :entries
 
+  resources :user_has_notes
+
   resources :notes
   get "/notes/:note_id/entries" => "entries#list", as: "entry_list"
 

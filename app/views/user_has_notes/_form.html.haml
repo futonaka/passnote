@@ -1,0 +1,6 @@
+= simple_form_for @user_has_note, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :user_id
+  = f.input :note_id
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), user_has_notes_path, :class => 'btn'
