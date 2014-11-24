@@ -4,7 +4,7 @@
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:id)
+      %th
       %th= model_class.human_attribute_name(:note_id)
       %th= model_class.human_attribute_name(:author_id)
       %th= model_class.human_attribute_name(:weather)
@@ -15,7 +15,7 @@
   %tbody
     - @entries.each do |entry|
       %tr
-        %td= link_to entry.id, entry_path(entry)
+        %td= link_to "この日記を読む", entry_path(entry)
         %td= entry.note.title
         %td= User.find(entry.author_id).name
         %td= entry.weather
