@@ -1,4 +1,4 @@
 $.backstretch([
-  "/assets/images/writing.jpg"
-  "/assets/images/pens.jpg"
+  "/assets/images/write.jpg"
+  "/assets/images/pen.jpg"
 ], {duration: 4000, fade: 750})
