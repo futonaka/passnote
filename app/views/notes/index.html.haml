@@ -4,7 +4,6 @@
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:title)
       %th= model_class.human_attribute_name(:description)
       %th= model_class.human_attribute_name(:created_at)
@@ -12,8 +11,7 @@
   %tbody
     - @notes.each do |note|
       %tr
-        %td= link_to note.id, note_path(note)
-        %td= note.title
+        %td= link_to note.title, entry_list_path(note)
         %td= note.description
         %td=l note.created_at
         %td

@@ -3,10 +3,10 @@ class EntriesController < ApplicationController
 
   respond_to :html
 
-  def index
-    @entries = Entry.all
-    respond_with(@entries)
-  end
+#  def index
+#    @entries = Entry.all
+#    respond_with(@entries)
+#  end
 
   def show
     respond_with(@entry)
@@ -34,6 +34,11 @@ class EntriesController < ApplicationController
   def destroy
     @entry.destroy
     respond_with(@entry)
+  end
+
+  def list
+    @entries = Entry.where(note_id: params[:note_id])
+    respond_with(@entries)
   end
 
   private

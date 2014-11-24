@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      note: 交換日記ノート
+      entry: 日記
+    attributes:
+      note:
+        title: ノート名
+        description: ノートの説明
+      entry:
+        author_id: 書いた人
+        weather: 天気
+        date: 日付
+        body: 本文
+
