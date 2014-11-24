@@ -25,6 +25,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     @note.save
+    @note.users << current_user
     respond_with(@note)
   end
 
