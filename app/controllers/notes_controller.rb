@@ -1,11 +1,12 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :validate_user!, except: [:index]
 
   respond_to :html
 
   def index
-    @notes = Note.all
+    @notes = Note.joins(:users).where(users: {id: current_user.id})
     respond_with(@notes)
   end
 
@@ -44,5 +45,11 @@ class NotesController < ApplicationController
 
     def note_params
       params.require(:note).permit(:title, :description)
+    end
+
+    def validate_user!
+      if @note && !@note.users.include?(current_user)
+        redirect_to notes_path, alert: "参照権限の無いノートです"
+      end
     end
 end
