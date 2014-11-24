@@ -69,6 +69,6 @@ class UserHasNotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_has_note_params
-      params[:user_has_note]
+      params.require(:user_has_note).permit(:user_id, :note_id)
     end
 end
