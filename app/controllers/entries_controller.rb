@@ -14,6 +14,8 @@ class EntriesController < ApplicationController
 
   def new
     @entry = Entry.new
+    @note_id = params[:note_id]
+    @user_id = current_user.id
     respond_with(@entry)
   end
 

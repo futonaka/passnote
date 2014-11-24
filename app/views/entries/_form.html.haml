@@ -1,6 +1,6 @@
 = simple_form_for @entry, :html => { :class => 'form-horizontal' } do |f|
-  = f.input :note_id
-  = f.input :author_id
+  = f.hidden_field :note_id, value: @note_id
+  = f.hidden_field :author_id, value: @user_id
   = f.input :weather
   = f.input :date
   = f.input :body

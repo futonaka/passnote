@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :notes
   get "/notes/:note_id/entries" => "entries#list", as: "entry_list"
+  get "/notes/:note_id/entries/new" => "entries#new", as: "new_entry_with_note_id"
 
   get "home", to: "devise/sessions#new", as: "user_root"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
